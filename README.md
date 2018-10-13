@@ -17,3 +17,11 @@ QObject::connect(button, SIGNAL(clicked()), &app, SLOT(quit()));
 ```
 
 就将quit()行为与clicked()动作在button实体上连接起来，这句话就定义了一个完整的事件-处理链条。
+
+## 第三条
+
+Qt编程最常用的方式是
+
+1. 声明所需的窗口部件
+2. 设置它们所应该具备的属性
+3. 把这些窗口部件添加到布局中

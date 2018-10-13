@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "qspinbox": "cpp",
+        "qslider": "cpp"
+    }
+}

@@ -18,10 +18,10 @@ int main(int argc, char *argv[]) {
     QObject::connect(spinBox, SIGNAL(valueChanged(int)), slider, SLOT(setValue(int)));
     spinBox->setValue(35);
 
-    QHBoxLayout *layout = new QHBoxLayout;
+    QHBoxLayout *layout = new QHBoxLayout; // 横向排列两个控件
     layout->addWidget(spinBox);
     layout->addWidget(slider);
-    window->setLayout(layout);
+    window->setLayout(layout); // 把布局绑定到window中去
 
     window->show();
 
