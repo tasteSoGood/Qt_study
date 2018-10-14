@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 #include "finddialog.h"
 
 FindDialog::FindDialog(QWidget *parent) : QDialog(parent) {
@@ -43,7 +43,7 @@ FindDialog::FindDialog(QWidget *parent) : QDialog(parent) {
 
 void FindDialog::findClicked() {
     QString text = lineEdit->text();
-    Qt::CaseSensitivity cs = caseCheckBox->isChecked() ? Qt::CaseSensitivity : Qt::CaseInsensitive;
+    Qt::CaseSensitivity cs = caseCheckBox->isChecked() ? Qt::CaseSensitive : Qt::CaseInsensitive;
     if(backwardCheckBox->isChecked()) {
         emit findPrevious(text, cs);
     } else {
