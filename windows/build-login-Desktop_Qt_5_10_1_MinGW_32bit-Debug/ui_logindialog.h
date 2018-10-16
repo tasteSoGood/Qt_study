@@ -66,6 +66,8 @@ public:
         LoginDialog->setWindowTitle(QApplication::translate("LoginDialog", "Dialog", nullptr));
         label->setText(QApplication::translate("LoginDialog", "\347\224\250\346\210\267\345\220\215", nullptr));
         label_2->setText(QApplication::translate("LoginDialog", "\345\257\206\347\240\201", nullptr));
+        usrLineEdit->setPlaceholderText(QApplication::translate("LoginDialog", "\350\257\267\350\276\223\345\205\245\347\224\250\346\210\267\345\220\215", nullptr));
+        pwdLineEdit->setPlaceholderText(QApplication::translate("LoginDialog", "\350\257\267\350\276\223\345\205\245\345\257\206\347\240\201", nullptr));
         loginBtn->setText(QApplication::translate("LoginDialog", "\347\231\273\351\231\206", nullptr));
         exitBtn->setText(QApplication::translate("LoginDialog", "\351\200\200\345\207\272", nullptr));
     } // retranslateUi
