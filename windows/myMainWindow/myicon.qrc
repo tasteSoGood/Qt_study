@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/myimages">
+        <file>image/find.png</file>
+        <file>image/new.png</file>
+        <file>image/open.png</file>
+        <file>image/save.png</file>
+        <file>image/saveas.png</file>
+    </qresource>
+</RCC>

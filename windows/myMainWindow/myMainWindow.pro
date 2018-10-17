@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-10-15T19:00:23
+# Project created by QtCreator 2018-10-17T15:18:46
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = myMainWindow
+TARGET = mymainwindow
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,13 +25,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    logindlg.cpp
+        mainwindow.cpp
 
 HEADERS += \
-        mainwindow.h \
-    logindlg.h
+        mainwindow.h
 
 FORMS += \
-        mainwindow.ui \
-    logindlg.ui
+        mainwindow.ui
+
+RESOURCES += \
+    myicon.qrc
