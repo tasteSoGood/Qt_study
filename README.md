@@ -30,7 +30,7 @@ Qt编程最常用的方式是
 
 就像第二条所说的，信号与槽是非常重要的两个概念，现在我们来先梳理以下编写并运行一个可执行的Qt程序的大致步骤：
 
-Qt遵守着严格的MVC模型，即`Model-View-Controller`，在创建一个应用的时候，以`./windows/login1`中的项目代码为例，模型部分有着明显的父子关系的结构：
+Qt遵守着严格的MVC模型，即`Model-View-Controller`，在创建一个应用的时候，以`./project/login1`中的项目代码为例，模型部分有着明显的父子关系的结构：
 
 ```
 QApplication a->
