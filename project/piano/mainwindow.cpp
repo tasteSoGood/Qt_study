@@ -4,6 +4,7 @@
 #include <QSound>
 #include <QGridLayout>
 #include <QKeyEvent>
+#include <QTimer>
 
 /* debug:
  * 此处如果没有QSound类，需要做两步（linux平台下）
@@ -54,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // 产生白键
     for(int i = 0; i < 88; i++) {
         if (!note_name[i].contains(tr("m"))) { // 白键
-            QPushButton *temp_btn = new QPushButton(this);
+            QPushButton *temp_btn = new QPushButton(tr("%1").arg(i), this);
             temp_btn->setGeometry((white++) * key_width, 0, key_width, key_height);
             temp_btn->setStyleSheet("QPushButton {"
                                     "background-color: #ffffff;"
@@ -75,6 +76,18 @@ MainWindow::MainWindow(QWidget *parent) :
             connect(keys[i], SIGNAL(clicked()), notes[i], SLOT(play()));
         }
     }
+
+    // 曲谱
+    music = {
+        {{39}, {41}, {43}, {39}},
+        {{39}, {41}, {43}, {39}},
+        {{43}, {44}, {46}},
+        {{43}, {44}, {46}},
+        {{46}, {48}, {46}, {44}, {43}, {39}},
+        {{46}, {48}, {46}, {44}, {43}, {39}}
+    }; // 两只老虎
+    this->startTimer(500);
+    section_cnt = 0, note_cnt = 0;
 }
 
 MainWindow::~MainWindow()
@@ -110,5 +123,21 @@ void MainWindow::keyReleaseEvent(QKeyEvent *e) {
                 keys[i]->setStyleSheet("QPushButton {background-color: #ffffff}");
             break;
         }
+    }
+}
+
+void MainWindow::timerEvent(QTimerEvent *) {
+    for(int i = 0; i < music[section_cnt][note_cnt].size(); i++) {
+        notes[music[section_cnt][note_cnt][i]]->play();
+    }
+    if (note_cnt < music[section_cnt].size() - 1) {
+        note_cnt++;
+    } else {
+        if (section_cnt < music.size() - 1) {
+            section_cnt++;
+        } else {
+            section_cnt = 0;
+        }
+        note_cnt = 0;
     }
 }

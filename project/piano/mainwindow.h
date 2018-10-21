@@ -18,12 +18,15 @@ public:
     ~MainWindow();
     void keyPressEvent(QKeyEvent *);
     void keyReleaseEvent(QKeyEvent *);
+    void timerEvent(QTimerEvent *);
 
 private:
     Ui::MainWindow *ui;
     QVector<QString> note_name; // 音名
     QVector<QSound *> notes; // 音符
     QVector<QPushButton *> keys; // 琴键
+    int section_cnt, note_cnt;
+    QVector< QVector< QVector<int> > > music; // 曲谱
 };
 
 #endif // MAINWINDOW_H
